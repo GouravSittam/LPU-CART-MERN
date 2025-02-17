@@ -41,9 +41,9 @@ const Products = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl font-bold">Our Premium Products</h1>
+        <h1 className="text-4xl font-bold text-white">Our Premium Products</h1>
         <button
           onClick={() => navigate('/cart')}
           className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 relative"
@@ -59,9 +59,9 @@ const Products = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
-          <div key={product._id} className="bg-white p-6 rounded-lg shadow-lg">
+          <div key={product._id} className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4 rounded-t-lg" />
-            <h2 className="text-2xl font-semibold">{product.name}</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">{product.name}</h2>
             <p className="text-gray-600 mt-2">${product.cost}</p>
             <button
               onClick={() => handleAddToCart(product._id)}
